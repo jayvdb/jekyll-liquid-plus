@@ -27,6 +27,7 @@ end
 module LiquidPlus
   class IncludeTag < Jekyll::Tags::IncludeTag
     LOCALS = /(.*?)(([\w-]+)\s*=\s*(?:"([^"\\]*(?:\\.[^"\\]*)*)"|'([^'\\]*(?:\\.[^'\\]*)*)'|([\w\.-]+)))(.*)?/
+    INCLUDES_DIR = '_includes'
 
     alias_method :default_render, :render
 

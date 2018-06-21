@@ -34,10 +34,10 @@ module LiquidPlus
         nil
       end
 
-      def get_value(vars, context)
+      def get_value(vars, context, parse_context)
         vars = vars.gsub(/ or /, ' || ')
         vars = vars.strip.split(/ \|\| /).map do |v|
-          Liquid::Variable.new(v.strip)
+          Liquid::Variable.new(v.strip, parse_context)
         end
         determine_value(vars, context)
       end

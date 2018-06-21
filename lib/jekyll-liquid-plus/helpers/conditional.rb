@@ -30,12 +30,12 @@ module LiquidPlus
       end
 
       def evaluate(type, expression, context)
-        tag = if type == 'if'
-          Liquid::If.new('if', expression, ["true","{% endif %}"])
+        template = if type == 'if'
+          Liquid::Template.parse('{% if ' + expression + ' %}true{% endif %}')
         elsif type == 'unless'
-          Liquid::Unless.new('unless', expression, ["true","{% endunless %}"])
+          Liquid::Template.parse('{% unless ' + expression + ' %}true{% endunless %}')
         end
-        tag.render(context) != ''
+        template.render(context) != ''
       end
     end
   end
