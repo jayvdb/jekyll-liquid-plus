@@ -19,7 +19,6 @@ Liquid::Template.register_tag('render', LiquidPlus::IncludeTag)
 Liquid::Template.register_tag('wrap', LiquidPlus::WrapTag)
 Liquid::Template.register_tag('wrap_include', LiquidPlus::WrapTag)
 Liquid::Template.register_tag('render_partial', LiquidPlus::IncludeTag)
-Liquid::Template.register_tag('assign', LiquidPlus::AssignTag)
 Liquid::Template.register_tag('capture', LiquidPlus::CaptureTag)
 Liquid::Template.register_tag('return', LiquidPlus::ReturnTag)
 
